@@ -2,6 +2,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     let selectedType = 'lost';
 
+    // 从URL获取类型参数
+    const urlType = CommonUtils.getQueryParam('type');
+    if (urlType === 'lost' || urlType === 'found') {
+        selectedType = urlType;
+        // 自动选中对应的类型
+        document.querySelectorAll('.type-option').forEach(o => {
+            o.classList.remove('active');
+            if (o.dataset.type === urlType) {
+                o.classList.add('active');
+            }
+        });
+    }
+
     // 类型选择
     document.querySelectorAll('.type-option').forEach(option => {
         option.addEventListener('click', function() {

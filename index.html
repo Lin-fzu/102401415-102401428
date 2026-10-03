@@ -8,32 +8,56 @@
 </head>
 <body>
     <div class="container">
-        <!-- 顶部导航 -->
+        <!-- 顶部蓝色导航 -->
         <div class="header">
-            <h1>🎒 校园失物招领平台</h1>
-            <div class="nav">
-                <a href="index.html" class="active">首页</a>
-                <a href="publish.html">发布信息</a>
+            <h1>🎒 失物招领</h1>
+            
+            <!-- 搜索栏 -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="搜索物品名称...">
+                <button id="searchBtn">搜索</button>
+            </div>
+
+            <!-- 分类筛选 -->
+            <div class="filter-tabs">
+                <div class="filter-tab active" data-type="all">全部</div>
+                <div class="filter-tab" data-type="lost">寻物</div>
+                <div class="filter-tab" data-type="found">招领</div>
             </div>
         </div>
 
-        <!-- 搜索栏 -->
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="搜索物品名称...">
-            <button id="searchBtn">搜索</button>
-        </div>
-
-        <!-- 分类筛选 -->
-        <div class="filter-tabs">
-            <div class="filter-tab active" data-type="all">全部</div>
-            <div class="filter-tab" data-type="lost">寻物</div>
-            <div class="filter-tab" data-type="found">招领</div>
+        <!-- 两个大按钮 -->
+        <div class="action-big-buttons">
+            <button class="big-btn lost" onclick="goToPublish('lost')">
+                <span class="icon">🔍</span>
+                <span>我丢东西了</span>
+            </button>
+            <button class="big-btn found" onclick="goToPublish('found')">
+                <span class="icon">📦</span>
+                <span>我捡到东西了</span>
+            </button>
         </div>
 
         <!-- 物品列表 -->
         <div class="item-list" id="itemList">
             <!-- 动态渲染 -->
         </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <span class="icon">🏠</span>
+            <span>首页</span>
+        </a>
+        <a href="publish.html" class="nav-item">
+            <span class="icon">✏️</span>
+            <span>发布</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <span class="icon">👤</span>
+            <span>我的</span>
+        </a>
     </div>
 
     <script src="js/data.js"></script>

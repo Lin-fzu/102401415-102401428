@@ -8,19 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <!-- 顶部导航 -->
-        <div class="header">
-            <h1>🎒 校园失物招领平台</h1>
-            <div class="nav">
-                <a href="index.html">首页</a>
-                <a href="publish.html" class="active">发布信息</a>
-            </div>
+        <!-- 顶部标题栏 -->
+        <div class="page-title-bar">
+            发布失物招领信息
         </div>
 
         <!-- 发布表单 -->
         <div class="form-card">
-            <h2 style="margin-bottom: 20px;">发布失物招领信息</h2>
-            
             <form id="publishForm">
                 <!-- 类型选择 -->
                 <div class="form-group">
@@ -28,11 +22,11 @@
                     <div class="type-selector">
                         <div class="type-option active" data-type="lost">
                             <div class="icon">🔍</div>
-                            <div>寻物启事</div>
+                            <div class="text">寻物启事</div>
                         </div>
                         <div class="type-option" data-type="found">
                             <div class="icon">📦</div>
-                            <div>招领启事</div>
+                            <div class="text">招领启事</div>
                         </div>
                     </div>
                 </div>
@@ -71,6 +65,22 @@
                 <button type="submit" class="btn btn-primary">发布信息</button>
             </form>
         </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>首页</span>
+        </a>
+        <a href="publish.html" class="nav-item active">
+            <span class="icon">✏️</span>
+            <span>发布</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <span class="icon">👤</span>
+            <span>我的</span>
+        </a>
     </div>
 
     <script src="js/data.js"></script>

@@ -3,6 +3,28 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentFilter = 'all';
     let currentKeyword = '';
 
+    // 物品图标映射
+    const itemIcons = {
+        '校园卡': '💳',
+        '雨伞': '☂️',
+        '耳机': '🎧',
+        '钥匙': '🔑',
+        '手机': '📱',
+        '钱包': '👛',
+        '书': '📚',
+        '水杯': '🥤'
+    };
+
+    // 获取物品图标
+    function getItemIcon(title) {
+        for (let key in itemIcons) {
+            if (title.includes(key)) {
+                return itemIcons[key];
+            }
+        }
+        return '📦';
+    }
+
     // 渲染物品列表
     function renderItemList() {
         const items = DataManager.searchItems(currentKeyword, currentFilter);
@@ -20,16 +42,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         container.innerHTML = items.map(item => `
             <div class="item-card" onclick="goToDetail(${item.id})">
-                <div class="item-card-header">
-                    <span class="item-type ${item.type}">${CommonUtils.getTypeText(item.type)}</span>
-                    <span class="item-status ${item.status === 'resolved' ? 'resolved' : ''}">
-                        ${CommonUtils.getStatusText(item)}
-                    </span>
-                </div>
-                <div class="item-title">${CommonUtils.escapeHtml(item.title)}</div>
-                <div class="item-meta">
-                    <span>📍 ${CommonUtils.escapeHtml(item.location)}</span>
-                    <span>🕐 ${CommonUtils.escapeHtml(item.time)}</span>
+                <div class="item-thumb">${getItemIcon(item.title)}</div>
+                <div class="item-content">
+                    <div class="item-card-header">
+                        <span class="item-type ${item.type}">${CommonUtils.getTypeText(item.type)}</span>
+                        <span class="item-status ${item.status === 'resolved' ? 'resolved' : ''}">
+                            ${CommonUtils.getStatusText(item)}
+                        </span>
+                    </div>
+                    <div class="item-title">${CommonUtils.escapeHtml(item.title)}</div>
+                    <div class="item-meta">
+                        <span>📍 ${CommonUtils.escapeHtml(item.location)}</span>
+                        <span>🕐 ${CommonUtils.escapeHtml(item.time)}</span>
+                    </div>
                 </div>
             </div>
         `).join('');
@@ -38,6 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // 跳转到详情页
     window.goToDetail = function(id) {
         window.location.href = `detail.html?id=${id}`;
+    };
+
+    // 跳转到发布页
+    window.goToPublish = function(type) {
+        window.location.href = `publish.html?type=${type}`;
     };
 
     // 搜索功能

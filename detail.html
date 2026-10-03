@@ -8,13 +8,9 @@
 </head>
 <body>
     <div class="container">
-        <!-- 顶部导航 -->
-        <div class="header">
-            <h1>🎒 校园失物招领平台</h1>
-            <div class="nav">
-                <a href="index.html">首页</a>
-                <a href="publish.html">发布信息</a>
-            </div>
+        <!-- 顶部标题栏 -->
+        <div class="page-title-bar">
+            信息详情
         </div>
 
         <!-- 详情卡片 -->
@@ -43,21 +39,31 @@
             </div>
 
             <div class="contact-info">
-                <h3 style="font-size: 14px; color: #999; margin-bottom: 8px;">联系方式</h3>
-                <p id="detailContact" style="font-size: 16px; color: #2d3436;"></p>
+                <h3 style="font-size: 13px; color: #999; margin-bottom: 6px;">联系方式</h3>
+                <p id="detailContact" style="font-size: 15px; color: #2d3436;"></p>
             </div>
 
             <!-- 操作按钮 -->
             <div class="action-buttons" id="actionButtons" style="display: none;">
                 <button class="btn btn-primary" id="markFoundBtn">标记为已找到</button>
-                <button class="btn btn-secondary" id="markReturnedBtn">标记为已归还</button>
             </div>
         </div>
+    </div>
 
-        <!-- 返回按钮 -->
-        <div style="text-align: center; margin-top: 20px;">
-            <button class="btn btn-secondary" onclick="history.back()">返回首页</button>
-        </div>
+    <!-- 底部导航栏 -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>首页</span>
+        </a>
+        <a href="publish.html" class="nav-item">
+            <span class="icon">✏️</span>
+            <span>发布</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <span class="icon">👤</span>
+            <span>我的</span>
+        </a>
     </div>
 
     <script src="js/data.js"></script>
