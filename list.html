@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表 - 校园失物招领平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部标题栏 -->
+        <div class="page-title-bar" id="pageTitle">
+            列表
+        </div>
+
+        <!-- 空状态 -->
+        <div class="empty-state" style="padding-top: 80px;">
+            <div class="icon">📭</div>
+            <p>暂无内容</p>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>首页</span>
+        </a>
+        <a href="publish.html" class="nav-item">
+            <span class="icon">✏️</span>
+            <span>发布</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <span class="icon">👤</span>
+            <span>我的</span>
+        </a>
+    </div>
+
+    <script>
+        // 从URL获取页面标题
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = urlParams.get('title') || '列表';
+        document.getElementById('pageTitle').textContent = title;
+    </script>
+</body>
+</html>

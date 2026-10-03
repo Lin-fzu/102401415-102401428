@@ -58,6 +58,41 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = `detail.html?id=${id}`;
     };
 
+    // 跳转到通用列表页
+    window.goToList = function(title) {
+        window.location.href = `list.html?title=${encodeURIComponent(title)}`;
+    };
+
+    // 跳转到搜索页
+    window.goToSearch = function() {
+        window.location.href = 'index.html';
+    };
+
+    // 打开联系方式修改弹窗
+    window.openContactModal = function() {
+        const modal = document.getElementById('contactModal');
+        const currentContact = document.getElementById('currentContact').textContent;
+        document.getElementById('contactInput').value = currentContact;
+        modal.classList.add('show');
+    };
+
+    // 关闭弹窗
+    window.closeContactModal = function() {
+        document.getElementById('contactModal').classList.remove('show');
+    };
+
+    // 保存联系方式
+    window.saveContact = function() {
+        const newContact = document.getElementById('contactInput').value.trim();
+        if (!newContact) {
+            CommonUtils.showToast('请输入联系方式');
+            return;
+        }
+        document.getElementById('currentContact').textContent = newContact;
+        closeContactModal();
+        CommonUtils.showToast('保存成功');
+    };
+
     // 初始渲染
     renderMyItems();
 });

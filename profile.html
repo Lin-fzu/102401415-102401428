@@ -49,19 +49,19 @@
 
         <!-- 功能按钮组 -->
         <div class="func-grid">
-            <div class="func-item">
+            <div class="func-item" onclick="goToList('消息通知')">
                 <div class="func-icon">🔔</div>
                 <div class="func-name">消息通知</div>
             </div>
-            <div class="func-item">
+            <div class="func-item" onclick="goToList('我的收藏')">
                 <div class="func-icon">❤️</div>
                 <div class="func-name">我的收藏</div>
             </div>
-            <div class="func-item">
+            <div class="func-item" onclick="goToList('浏览记录')">
                 <div class="func-icon">🕐</div>
                 <div class="func-name">浏览记录</div>
             </div>
-            <div class="func-item">
+            <div class="func-item" onclick="goToSearch()">
                 <div class="func-icon">🔍</div>
                 <div class="func-name">去搜索</div>
             </div>
@@ -69,13 +69,13 @@
 
         <!-- 设置列表 -->
         <div class="settings-list">
-            <div class="setting-item">
+            <div class="setting-item" onclick="openContactModal()">
                 <div class="setting-left">
                     <span class="setting-icon">📞</span>
                     <span>默认联系方式</span>
                 </div>
                 <div class="setting-right">
-                    <span>138****1234</span>
+                    <span id="currentContact">138****1234</span>
                     <span class="arrow">›</span>
                 </div>
             </div>
@@ -97,6 +97,26 @@
                 <div class="setting-right">
                     <span class="arrow">›</span>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系方式修改弹窗 -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>修改默认联系方式</h3>
+                <span class="modal-close" onclick="closeContactModal()">×</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>联系方式</label>
+                    <input type="text" id="contactInput" placeholder="请输入手机号/微信/QQ">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeContactModal()">取消</button>
+                <button class="btn btn-primary" onclick="saveContact()">保存</button>
             </div>
         </div>
     </div>
