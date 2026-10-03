@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 - 校园失物招领平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部用户信息卡片 -->
+        <div class="user-card">
+            <div class="user-info">
+                <div class="user-avatar">林</div>
+                <div class="user-detail">
+                    <div class="user-name">
+                        林豪
+                        <span class="verify-badge">✓ 已实名</span>
+                    </div>
+                    <div class="user-desc">计算机学院 · 2024级 · 学号 1024****15</div>
+                </div>
+            </div>
+            <div class="user-stats">
+                <div class="stat-item">
+                    <div class="stat-num">6</div>
+                    <div class="stat-label">我的发布</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">4</div>
+                    <div class="stat-label">成功归还</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">12</div>
+                    <div class="stat-label">帮助他人</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 我的发布 -->
+        <div class="section-card">
+            <div class="section-header">
+                <h3>我的发布</h3>
+                <a href="publish.html" class="section-link">+ 发布新信息</a>
+            </div>
+            <div class="my-item-list" id="myItemList">
+                <!-- 动态渲染 -->
+            </div>
+        </div>
+
+        <!-- 功能按钮组 -->
+        <div class="func-grid">
+            <div class="func-item">
+                <div class="func-icon">🔔</div>
+                <div class="func-name">消息通知</div>
+            </div>
+            <div class="func-item">
+                <div class="func-icon">❤️</div>
+                <div class="func-name">我的收藏</div>
+            </div>
+            <div class="func-item">
+                <div class="func-icon">🕐</div>
+                <div class="func-name">浏览记录</div>
+            </div>
+            <div class="func-item">
+                <div class="func-icon">🔍</div>
+                <div class="func-name">去搜索</div>
+            </div>
+        </div>
+
+        <!-- 设置列表 -->
+        <div class="settings-list">
+            <div class="setting-item">
+                <div class="setting-left">
+                    <span class="setting-icon">📞</span>
+                    <span>默认联系方式</span>
+                </div>
+                <div class="setting-right">
+                    <span>138****1234</span>
+                    <span class="arrow">›</span>
+                </div>
+            </div>
+            <div class="setting-item">
+                <div class="setting-left">
+                    <span class="setting-icon">🔔</span>
+                    <span>认领提醒</span>
+                </div>
+                <div class="setting-right">
+                    <span>已开启</span>
+                    <span class="arrow">›</span>
+                </div>
+            </div>
+            <div class="setting-item">
+                <div class="setting-left">
+                    <span class="setting-icon">❓</span>
+                    <span>帮助与反馈</span>
+                </div>
+                <div class="setting-right">
+                    <span class="arrow">›</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>首页</span>
+        </a>
+        <a href="publish.html" class="nav-item">
+            <span class="icon">✏️</span>
+            <span>发布</span>
+        </a>
+        <a href="profile.html" class="nav-item active">
+            <span class="icon">👤</span>
+            <span>我的</span>
+        </a>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

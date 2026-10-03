@@ -456,6 +456,245 @@ body {
     font-weight: 600;
 }
 
+/* 我的页面 - 用户卡片 */
+.user-card {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    margin: 16px;
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.verify-badge {
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: normal;
+}
+
+.user-desc {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.user-stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat-num {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.stat-label {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* 我的发布区域 */
+.section-card {
+    background: white;
+    margin: 0 16px 16px;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.section-link {
+    font-size: 13px;
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.my-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.my-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    background: #fafbfc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.my-item:hover {
+    background: #f0f4ff;
+}
+
+.my-item-thumb {
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f0f3ff 0%, #e8eeff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.my-item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.my-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 4px;
+}
+
+.my-item-meta {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.my-item-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 11px;
+}
+
+.my-item-tag.resolved {
+    background: #e8f5e9;
+    color: #2ecc71;
+}
+
+.my-item-tag.active {
+    background: #fff3e0;
+    color: #ff9800;
+}
+
+/* 功能按钮组 */
+.func-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 0 16px 16px;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.func-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.func-icon {
+    font-size: 24px;
+}
+
+.func-name {
+    font-size: 12px;
+    color: #636e72;
+}
+
+/* 设置列表 */
+.settings-list {
+    background: white;
+    margin: 0 16px 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 16px;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #2d3436;
+}
+
+.setting-icon {
+    font-size: 18px;
+}
+
+.setting-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #999;
+}
+
+.arrow {
+    font-size: 18px;
+    color: #ccc;
+}
+
 /* 响应式 */
 @media (max-width: 600px) {
     .header h1 {
@@ -474,5 +713,9 @@ body {
     
     .action-buttons {
         flex-direction: column;
+    }
+    
+    .func-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
